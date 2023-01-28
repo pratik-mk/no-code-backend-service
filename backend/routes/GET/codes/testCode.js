@@ -1,0 +1,1 @@
+const temp = 1; if(temp > 10){console.log("IF STATEMENT")}else {console.log("ELSE STATEMENT")}

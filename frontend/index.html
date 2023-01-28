@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://unpkg.com/blockly/blockly.min.js"></script>
+  
+</head>
+<body>
+  <div>
+  <div id="blocklyDiv" style="height: 800px; width: 100%;"></div>
+  <button id="convertButton">Convert to Code</button>
+  <xml id="toolbox" style="display: none">
+    <category name="Logic">
+      <block type="controls_if"></block>
+      <block type="logic_compare"></block>
+      <block type="logic_operation"></block>
+      <block type="logic_negate"></block>
+      <block type="logic_boolean"></block>
+    </category>
+    <category name="Math">
+      <block type="math_number"></block>
+      <block type="math_arithmetic"></block>
+      <block type="math_single"></block>
+      <block type="math_trig"></block>
+      <block type="math_constant"></block>
+      <block type="math_number_property"></block>
+    </category>
+    <category name="Control">
+      <block type="controls_repeat_ext"></block>
+      <block type="controls_whileUntil"></block>
+      <block type="controls_for"></block>
+      <block type="controls_flow_statements"></block>
+    </category>
+    <category name="Text">
+      <block type="text"></block>
+      <block type="text_join"></block>
+      <block type="text_append"></block>
+      <block type="text_length"></block>
+      <block type="text_isEmpty"></block>
+    </category>
+    <category name="Variables">
+      <block type="variables_get"></block>
+      <block type="variables_set"></block>
+    </category>
+    <category name="Functions" custom="PROCEDURE"></block>
+      <category name="Input/Output">
+        <block type="input_value"></block>
+        <block type="input_statement"></block>
+        <block type="input_dummy"></block>
+        <block type="output_value"></block>
+        <block type="output_statement"></block>
+      </category>
+    </xml>
+    <script>
+      var blocklyDiv = document.getElementById('blocklyDiv');
+      document.getElementById('convertButton').addEventListener('click', function() {
+        // Code to convert blocks to code goes here
+        var code = Blockly.JavaScript.workspaceToCode(workspace);
+        console.log(code);
+      });
+      var workspace = Blockly.inject(blocklyDiv, {toolbox: document.getElementById('toolbox')});
+    </script>
+    </div>
+  </body>
+  </html>
